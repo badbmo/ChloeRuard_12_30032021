@@ -6,6 +6,7 @@
 	background-color: black;
 	height: 5.6rem;
 	padding: 0 1rem ;
+	box-shadow: 0px 4px 4px 0px #00000040;
 }
 
 .header__nav{
