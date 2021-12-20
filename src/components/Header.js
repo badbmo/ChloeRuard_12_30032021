@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import Logo from "../assets/logo.svg";
 import "../style/header.css";
 
-function User() {
+function Header() {
 	return (
 		<header className="header">
 			<Link to="/">
@@ -27,4 +27,4 @@ function User() {
 	);
 }
 
-export default User;
+export default Header;
