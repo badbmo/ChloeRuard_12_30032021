@@ -1,5 +1,22 @@
+.dashboard{
+	margin: auto;
+}
+
 .dashboard__macroList{
 	display: flex; 
 	flex-direction: column;
 	gap: 2.5rem;
+}
+
+.dashboard__data{
+	display: flex;
+	flex-direction: row;
+	gap: 1.75rem;
+}
+
+.dashboard__charts{
+	display: grid;
+	grid-template-columns: repeat(3, 16rem);
+	grid-template-rows: repeat(2, 1fr);
+	gap: 1.75rem;
 }

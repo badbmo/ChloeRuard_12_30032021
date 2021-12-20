@@ -1,12 +1,9 @@
 .sideNav {
 	background-color: black;
-	height: 100vh;
+	height: calc(100vh - 5.6rem);
 	width: 7.25rem;
-	/* position: absolute;
-	top: 0;
-	z-index: -2; */
 	display: grid;
-	grid-template-rows: 30vh 1fr 1fr;
+	grid-template-rows: 16rem 1fr 1fr;
 	justify-items: center;
 }
 
