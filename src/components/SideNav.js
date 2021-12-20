@@ -9,15 +9,15 @@ import Weight from "../assets/icon_weight.svg";
 function SideNav() {
 	return (
 		<div className="sideNav">
-			<div className="sportsButton">
+			<div className="sideNav__sportsButton">
 				<SportButton src={Zen} alt="vers yoga" />
 				<SportButton src={Swim} alt="vers natation" />
 				<SportButton src={Bicycle} alt="vers vélo" />
 				<SportButton src={Weight} alt="vers musculation" />
 			</div>
-			<div className="sideNav__box">
-			<span className="sideNav__copyright">Copyright, SportSee 2020</span>
-		</div>
+			<div className="sideNav__copyright">
+				<span className="copyright__content">Copyright, SportSee 2020</span>
+			</div>
 		</div>
 	);
 }
