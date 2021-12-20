@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import User from "./components/User";
+import User from "./pages/User";
 
 function App() {
 	return (
