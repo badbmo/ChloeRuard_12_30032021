@@ -1,0 +1,57 @@
+.macroWidget {
+	box-shadow: 0px 2px 4px 0px #00000005;
+	background-color: #fbfbfb;
+	border-radius: 5px;
+	width: 12rem;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 1.5rem;
+	padding: 2rem;
+}
+
+.macroWidget__icon {
+	width: 3.75rem;
+	height: 3.75rem;
+	border-radius: 6px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.macroWidget__svg {
+	width: fit-content;
+}
+
+.icon-red {
+	background-color: #fbeaea;
+}
+
+.icon-blue {
+	background-color: #e9f4fb;
+}
+
+.icon-yellow {
+	background-color: #fbf6e5;
+}
+
+.icon-pink {
+	background-color: #fbeaef;
+}
+
+.macroWidget__description {
+	display: flex;
+	flex-direction: column;
+}
+
+.macroWidget__amount {
+	font-weight: 700;
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+}
+
+.macroWidget__type {
+	color: #74798c;
+	font-size: 0.75rem;
+	line-height: 1.5rem;
+}
