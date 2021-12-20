@@ -1,0 +1,7 @@
+.chartWeight {
+	box-shadow: 0px 2px 4px 0px #00000005;
+	background-color: #fbfbfb;
+	border-radius: 5px;
+	height: 20rem;
+	grid-area: 1 / 1 / 2 / 4;
+}
