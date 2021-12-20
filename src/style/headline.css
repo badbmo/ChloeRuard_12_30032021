@@ -1,0 +1,13 @@
+.headline__greeting{
+	font-size: 3rem;
+	margin-bottom: 2.5rem;
+}
+
+.headline__name{
+	color: red;
+}
+
+.headline__congratulation{
+	font-size: 1.125rem;
+	line-height: 1.5rem;
+}
