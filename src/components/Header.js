@@ -13,13 +13,13 @@ function Header() {
 				<NavLink exact className="nav__option" to="/">
 					Accueil
 				</NavLink>
-				<NavLink exact className="nav__option" to="/*">
+				<NavLink className="nav__option" to="/*">
 					Profil
 				</NavLink>
-				<NavLink exact className="nav__option" to="/*">
+				<NavLink className="nav__option" to="/*">
 					Réglage
 				</NavLink>
-				<NavLink exact className="nav__option" to="/*">
+				<NavLink className="nav__option" to="/*">
 					Communauté
 				</NavLink>
 			</nav>
