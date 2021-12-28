@@ -34,14 +34,21 @@ function Dashboard() {
 	const [errorMain, isLoadingMain, dataMain] = useApi(url.userMainData(userId));
 	console.log(dataMain);
 
-	const [errorActivity, isLoadingActivity, dataActivity] = useApi(url.userMainData(userId));
-	console.log(errorActivity, isLoadingActivity, dataActivity);
+	const [errorActivity, isLoadingActivity, dataActivity] = useApi(url.userActivity(userId));
+	console.log(dataActivity);
 
-	if (errorMain) {
+	const [errorSessions, isLoadingSessions, dataSessions] = useApi(url.userAverageSessions(userId));
+	console.log(dataSessions);
+
+	const [errorPerformance, isLoadingPerformance, dataPerformance] = useApi(url.userPerformance(userId));
+	console.log(dataPerformance);
+
+
+	if (errorMain || errorActivity || errorSessions || errorPerformance) {
 		return <p>{errorMain.message}</p>;
 	}
 
-	if (isLoadingMain) {
+	if (isLoadingMain || isLoadingActivity || isLoadingSessions || isLoadingPerformance) {
 		// return <Loader />;
 		return <p>ça charge !</p>;
 	}
@@ -57,10 +64,10 @@ function Dashboard() {
 					<ChartKpi />
 				</section>
 				<section className="dashboard__macroList">
-					<MacroWidget src={Fire} amount="1930kCal" type="Calories" color="red" />
-					<MacroWidget src={Chicken} amount="155g" type="Protéines" color="blue" />
-					<MacroWidget src={Apple} amount="290g" type="Glucides" color="yellow" />
-					<MacroWidget src={Hamburger} amount="50g" type="Lipides" color="pink" />
+					<MacroWidget src={Fire} amount={dataMain?.data?.keyData.calorieCount} unit="kCal" type="Calories" color="red" />
+					<MacroWidget src={Chicken} amount={dataMain?.data?.keyData.proteinCount} unit="g" type="Protéines" color="blue" />
+					<MacroWidget src={Apple} amount={dataMain?.data?.keyData.carbohydrateCount} unit="g" type="Glucides" color="yellow" />
+					<MacroWidget src={Hamburger} amount={dataMain?.data?.keyData.lipidCount} unit="g" type="Lipides" color="pink" />
 				</section>
 			</section>
 		</section>
