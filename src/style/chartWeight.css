@@ -5,3 +5,42 @@
 	height: 20rem;
 	grid-area: 1 / 1 / 2 / 4;
 }
+
+.chartWeight__info{
+	display: flex;
+	justify-content: space-between;
+	margin: 30px;
+	align-content: center;
+}
+
+.chartWeight__title{
+	font-size: 1rem;
+	color: #20253A
+}
+
+.chartWeight__legend{
+	display: flex;
+}
+
+.chartWeight__legend-weight, .chartWeight__legend-calory{
+	font-size: 0.8rem;
+	color: #74798C;
+	margin-left: 10px;
+}
+
+.chartWeight__legend-weight{
+	margin-right: 30px;
+}
+
+.custom-tooltip{
+	background-color: #FF0000;
+	color: white;
+	height: 4rem;
+	width: 2.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	font-weight: 500;
+	font-size: 0.4rem;
+}
