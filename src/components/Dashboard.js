@@ -32,17 +32,9 @@ function Dashboard() {
 	};
 
 	const [errorMain, isLoadingMain, dataMain] = useApi(url.userMainData(userId));
-	console.log(dataMain);
-
 	const [errorActivity, isLoadingActivity, dataActivity] = useApi(url.userActivity(userId));
-	console.log(dataActivity);
-
 	const [errorSessions, isLoadingSessions, dataSessions] = useApi(url.userAverageSessions(userId));
-	console.log(dataSessions);
-
 	const [errorPerformance, isLoadingPerformance, dataPerformance] = useApi(url.userPerformance(userId));
-	console.log(dataPerformance);
-
 
 	if (errorMain || errorActivity || errorSessions || errorPerformance) {
 		return <p>{errorMain.message}</p>;
@@ -58,10 +50,10 @@ function Dashboard() {
 			<Headline name={dataMain?.data?.userInfos.firstName} />
 			<section className="dashboard__data">
 				<section className="dashboard__charts">
-					<ChartWeight />
-					<ChartGoal />
-					<ChartRadar />
-					<ChartKpi />
+					<ChartWeight activity={dataActivity?.data?.sessions}/>
+					<ChartGoal averageSessions={dataSessions?.data?.sessions}/>
+					<ChartRadar performance={dataPerformance?.data?.data}/>
+					<ChartKpi score={dataMain?.data?.todayScore} />
 				</section>
 				<section className="dashboard__macroList">
 					<MacroWidget src={Fire} amount={dataMain?.data?.keyData.calorieCount} unit="kCal" type="Calories" color="red" />
