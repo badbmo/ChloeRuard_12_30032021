@@ -19,7 +19,13 @@ function ChartWeight({ activity }) {
 	};
 
 	const CustomXAxis = (tick) => {
-		return tick + 1;
+		const number=tick.split("-").pop()
+		if(number.startsWith("0")){
+			return number.split("0").pop()
+		}
+		else{
+			return number
+		};
 	};
 
 	return (
@@ -45,7 +51,7 @@ function ChartWeight({ activity }) {
 					barGap={8}
 				>
 					<CartesianGrid strokeDasharray="3 3" vertical={false}  />
-					<XAxis tickFormatter={CustomXAxis} tickLine={false} tickMargin={15} tick={{ fill: "#9B9EAC" }} />
+					<XAxis dataKey="day" tickFormatter={CustomXAxis} tickLine={false} tickMargin={15} tick={{ fill: "#9B9EAC" }} />
 					<YAxis dataKey="kilogram" yAxisId="kilogram" orientation="right" type="number" domain={['dataMin-7', 'dataMax+3']}  axisLine={false} tickLine={false} tick={{ fill: "#9B9EAC" }} tickMargin={30} />
 					<YAxis dataKey="calories" yAxisId="calories" orientation="left" type="number" domain={[0 , 'dataMax+20']} hide={true} />
 					<Tooltip content={<CustomTooltip />} cursor={{ stroke: '#C4C4C4', opacity: 0.5 }} offset={40}/>
