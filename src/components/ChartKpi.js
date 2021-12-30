@@ -14,7 +14,7 @@ function ChartKpi({ score }) {
 			<ResponsiveContainer width="100%" height="100%">
 				<PieChart>
 					<circle cx="50%" cy="50%" fill="white" r="75" className="chartKpi__circle"></circle>
-					  <text x="50%" y="48%" text-anchor="middle">
+					  <text x="50%" y="48%" textAnchor="middle">
           <tspan x="50%" fill="#20253A" className="chartKpi__legend-score">
             {score * 100}%
           </tspan>

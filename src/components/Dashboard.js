@@ -12,6 +12,7 @@ import ChartRadar from "./ChartRadar";
 import ChartWeight from "./ChartWeight";
 import useApi from "../hooks/useApi";
 import { useParams } from "react-router-dom";
+import Loader from "./Loader";
 
 function Dashboard() {
 	const { userId } = useParams();
@@ -41,8 +42,7 @@ function Dashboard() {
 	}
 
 	if (isLoadingMain || isLoadingActivity || isLoadingSessions || isLoadingPerformance) {
-		// return <Loader />;
-		return <p>ça charge !</p>;
+		return <Loader />;
 	}
 
 	return (
