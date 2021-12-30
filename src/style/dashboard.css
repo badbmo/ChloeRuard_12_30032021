@@ -1,23 +1,35 @@
-.dashboard{
+.dashboard {
 	margin: auto;
-	padding-top: 3.5rem;
+	padding: 5% 2%;
+	overflow-y: scroll;
+	height: 80vh;
 }
 
-.dashboard__macroList{
-	display: flex; 
-	flex-direction: column;
-	gap: 2.5rem;
-}
-
-.dashboard__data{
+.dashboard__macroList {
 	display: flex;
 	flex-direction: row;
 	gap: 1.75rem;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
-.dashboard__charts{
+@media screen and (min-width: 1275px) {
+	.dashboard__macroList {
+		flex-direction: column;
+		gap: 2.5rem;
+	}
+}
+
+.dashboard__data {
+	display: flex;
+	flex-direction: row;
+	gap: 1.75rem;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.dashboard__charts {
 	display: grid;
 	grid-template-columns: repeat(3, 16rem);
-	grid-template-rows: repeat(2, 1fr);
 	gap: 1.75rem;
 }

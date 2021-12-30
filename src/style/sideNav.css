@@ -1,10 +1,11 @@
 .sideNav {
 	background-color: black;
 	height: calc(100vh - 5.6rem);
-	width: 7.25rem;
+	min-width: 7.25rem;
 	display: grid;
-	grid-template-rows: 16rem 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
 	justify-items: center;
+	gap: 1rem;
 }
 
 .copyright__content {

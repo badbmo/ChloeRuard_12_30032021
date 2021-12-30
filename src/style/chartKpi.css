@@ -3,6 +3,7 @@
 	background-color: #fbfbfb;
 	border-radius: 5px;
 	height: 16.5rem;
+	position: relative;
 }
 
 .chartKpi__title {
