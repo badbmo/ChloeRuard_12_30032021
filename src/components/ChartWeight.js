@@ -9,7 +9,7 @@ function ChartWeight({ activity }) {
 	const CustomTooltip = ({ active, payload, label }) => {
 		if (active && payload && payload.length) {
 			return (
-				<div className="custom-tooltip">
+				<div className="chartWeight__tooltip">
 					<p>{`${payload[0].value}kg`}</p>
 					<p>{`${payload[1].value}Kcal`}</p>
 				</div>
