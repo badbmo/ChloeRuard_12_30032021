@@ -1,6 +1,7 @@
 import React from "react";
 import "../style/chartGoal.css";
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from "recharts";
+import PropTypes from "prop-types";
 
 /**
  * Line Chart Component displaying average length of sessions in a week
@@ -69,6 +70,10 @@ function ChartGoal({ averageSessions }) {
 			</ResponsiveContainer>
 		</article>
 	);
+}
+
+ChartGoal.propTypes = {
+  averageSessions: PropTypes.array.isRequired
 }
 
 export default ChartGoal;

@@ -1,6 +1,7 @@
 import React from "react";
 import "../style/chartRadar.css";
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from "recharts";
+import PropTypes from "prop-types";
 
 /**
  * Radar Chart Component displaying performance in different skills
@@ -32,6 +33,10 @@ function ChartRadar({ performance }) {
 			</ResponsiveContainer>
 		</article>
 	);
+}
+
+ChartRadar.propTypes = {
+  performance: PropTypes.array.isRequired
 }
 
 export default ChartRadar;

@@ -1,5 +1,6 @@
 import React from "react";
 import "../style/macroWidget.css";
+import PropTypes from "prop-types";
 
 /**
  * Macrowidget Component displaying macronutriment card
@@ -23,6 +24,14 @@ function MacroWidget({ src, amount, unit, type, color }) {
 			</div>
 		</article>
 	);
+}
+
+MacroWidget.propTypes = {
+  src: PropTypes.string.isRequired,
+	amount: PropTypes.number,
+	unit: PropTypes.string,
+	type: PropTypes.string,
+	color: PropTypes.string
 }
 
 export default MacroWidget;

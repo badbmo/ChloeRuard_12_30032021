@@ -1,5 +1,6 @@
 import React from "react";
 import "../style/headline.css";
+import PropTypes from "prop-types";
 
 /**
  * Headline Component displaying tailored greetings to user
@@ -16,6 +17,10 @@ function Headline({ name }) {
 			<span className="headline__congratulation">Félicitation ! Vous avez explosé vos objectifs hier 👏</span>
 		</div>
 	);
+}
+
+Headline.propTypes = {
+  name: PropTypes.string
 }
 
 export default Headline;

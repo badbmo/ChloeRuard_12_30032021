@@ -1,6 +1,7 @@
 import React from "react";
 import "../style/chartWeight.css";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import PropTypes from "prop-types";
 
 /**
  * Bar Chart Component displaying weight and Kcal evolution
@@ -67,6 +68,10 @@ function ChartWeight({ activity }) {
 			</ResponsiveContainer>
 		</article>
 	);
+}
+
+ChartWeight.propTypes = {
+  activity: PropTypes.array.isRequired
 }
 
 export default ChartWeight;

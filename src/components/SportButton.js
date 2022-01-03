@@ -1,5 +1,6 @@
 import React from "react";
 import "../style/sportButton.css";
+import PropTypes from "prop-types";
 
 /**
  * SportButton component 
@@ -14,6 +15,11 @@ function SportButton({ src, alt }) {
 			<img src={src} alt={alt} className="sportButton__icon" />
 		</button>
 	);
+}
+
+SportButton.propTypes = {
+  src: PropTypes.string.isRequired,
+	alt: PropTypes.string
 }
 
 export default SportButton;

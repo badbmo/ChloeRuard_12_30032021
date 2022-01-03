@@ -1,6 +1,13 @@
 import React from "react";
 import "../style/chartKpi.css";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import PropTypes from "prop-types";
+
+/**
+ * Kpi Chart Component displaying pourcentage of goal
+ * @param {Number} score user's data
+ * @returns {JSX} React component
+ */
 
 function ChartKpi({ score }) {
 	const data = [{ value: score }, { value: 1 - score }];
@@ -44,6 +51,10 @@ function ChartKpi({ score }) {
 			</ResponsiveContainer>
 		</article>
 	);
+}
+
+ChartKpi.propTypes = {
+  score: PropTypes.number.isRequired
 }
 
 export default ChartKpi;
