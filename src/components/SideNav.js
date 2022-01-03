@@ -6,6 +6,11 @@ import Swim from "../assets/icon_swim.svg";
 import Bicycle from "../assets/icon_bicycle.svg";
 import Weight from "../assets/icon_weight.svg";
 
+/**
+ * SideNav Component displaying SportButton components
+ * @returns {JSX} React component
+ */
+
 function SideNav() {
 	return (
 		<div className="sideNav">

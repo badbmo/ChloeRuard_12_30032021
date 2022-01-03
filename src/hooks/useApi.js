@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
 
+/**
+ * Custom hook to fetch data from API or mocked data
+ * @param {string} url url to fetch data from
+ * @returns {object} error, isloading, data
+ */
+
 export default function useApi(url) {
 	const [error, setError] = useState(null);
 	const [isLoading, setIsLoading] = useState(false);

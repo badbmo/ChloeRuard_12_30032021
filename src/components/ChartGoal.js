@@ -2,6 +2,12 @@ import React from "react";
 import "../style/chartGoal.css";
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from "recharts";
 
+/**
+ * Line Chart Component displaying average length of sessions in a week
+ * @param {Array} averageSessions user's data
+ * @returns {JSX} React component
+ */
+
 function ChartGoal({ averageSessions }) {
 
 	const data = averageSessions;

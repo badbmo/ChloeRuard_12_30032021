@@ -14,6 +14,11 @@ import useApi from "../hooks/useApi";
 import { useParams } from "react-router-dom";
 import Loader from "./Loader";
 
+/**
+ * Wrapper component displaying charts and data components
+ * @returns {JSX} React component
+ */
+
 function Dashboard() {
 	const { userId } = useParams();
 

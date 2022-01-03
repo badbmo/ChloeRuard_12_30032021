@@ -3,6 +3,11 @@ import "../style/home.css";
 import Header from "../components/Header";
 import { Link } from "react-router-dom";
 
+/**
+ * Home Page to choose user
+ * @returns {JSX} React component
+ */
+
 function Home() {
 	const usersList = [
 		{

@@ -1,6 +1,16 @@
 import React from "react";
 import "../style/macroWidget.css";
 
+/**
+ * Macrowidget Component displaying macronutriment card
+ * @param {string} src source card's icon
+ * @param {number} amount macronutriment's amount
+ * @param {string} unit macronutriment's unit
+ * @param {string} type type card's icon
+ * @param {string} color card's color
+ * @returns {JSX} React component
+ */
+
 function MacroWidget({ src, amount, unit, type, color }) {
 	return (
 		<article className="macroWidget">

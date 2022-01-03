@@ -3,6 +3,11 @@ import { Link, NavLink } from "react-router-dom";
 import Logo from "../assets/logo.svg";
 import "../style/header.css";
 
+/**
+ * Header Component displaying nav
+ * @returns {JSX} React component
+ */
+
 function Header() {
 	return (
 		<header className="header">

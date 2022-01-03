@@ -2,6 +2,12 @@ import React from "react";
 import "../style/chartWeight.css";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 
+/**
+ * Bar Chart Component displaying weight and Kcal evolution
+ * @param {Array} activity user's data
+ * @returns {JSX} React component
+ */
+
 function ChartWeight({ activity }) {
 
 	const data = activity;

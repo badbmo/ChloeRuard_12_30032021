@@ -2,6 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../style/error.css";
 
+/**
+ * Error Page
+ * @returns {JSX} React component
+ */
+
 function Error() {
 	return (
 		<main className="error">

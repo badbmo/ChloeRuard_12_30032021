@@ -2,6 +2,12 @@ import React from "react";
 import "../style/chartRadar.css";
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from "recharts";
 
+/**
+ * Radar Chart Component displaying performance in different skills
+ * @param {Array} performance user's data
+ * @returns {JSX} React component
+ */
+
 function ChartRadar({ performance }) {
 
 	const data = performance;

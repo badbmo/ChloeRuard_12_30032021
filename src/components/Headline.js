@@ -1,6 +1,12 @@
 import React from "react";
 import "../style/headline.css";
 
+/**
+ * Headline Component displaying tailored greetings to user
+ * @param {string} name user's name
+ * @returns {JSX} React component
+ */
+
 function Headline({ name }) {
 	return (
 		<div className="headline">
