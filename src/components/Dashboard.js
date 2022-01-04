@@ -10,9 +10,11 @@ import ChartGoal from "./ChartGoal";
 import ChartKpi from "./ChartKpi";
 import ChartRadar from "./ChartRadar";
 import ChartWeight from "./ChartWeight";
-import useApi from "../hooks/useApi";
+import useApi from "../utils/hooks/useApi";
 import { useParams } from "react-router-dom";
 import Loader from "./Loader";
+import { useContext } from "react";
+import { FetchContext } from "../utils/context/fetchContext"
 
 /**
  * Wrapper component displaying charts and data components
@@ -22,7 +24,7 @@ import Loader from "./Loader";
 function Dashboard() {
 	const { userId } = useParams();
 
-	const url = {
+	const urlApi = {
 		userMainData(userId) {
 			return `http://localhost:3000/user/${userId}`;
 		},
@@ -36,6 +38,31 @@ function Dashboard() {
 			return `http://localhost:3000/user/${userId}/performance`;
 		},
 	};
+
+	const urlMockData = {
+		userMainData(userId) {
+			return `../data/user/${userId}.json`;
+		},
+		userActivity(userId) {
+			return `../data/user/${userId}/activity.json`;
+		},
+		userAverageSessions(userId) {
+			return `../data/user/${userId}/average-sessions.json`;
+		},
+		userPerformance(userId) {
+			return `../data/user/${userId}/performance.json`;
+		},
+	};
+
+	const {fetch} = useContext(FetchContext);
+	const url = (fetch === 'API' ? urlApi : urlMockData)
+
+	//check in browser console where the data come from
+	if(url===urlApi){
+		console.log("fetch data from API");
+	}
+	if(url===urlMockData)
+	console.log("fetch data from mocked data");
 
 	const [errorMain, isLoadingMain, dataMain] = useApi(url.userMainData(userId));
 	const [errorActivity, isLoadingActivity, dataActivity] = useApi(url.userActivity(userId));
