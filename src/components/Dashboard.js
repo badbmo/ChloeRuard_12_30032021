@@ -42,8 +42,10 @@ function Dashboard() {
 	const [errorSessions, isLoadingSessions, dataSessions] = useApi(url.userAverageSessions(userId));
 	const [errorPerformance, isLoadingPerformance, dataPerformance] = useApi(url.userPerformance(userId));
 
-	if (errorMain || errorActivity || errorSessions || errorPerformance) {
-		return <p>{errorMain.message}</p>;
+	const error = errorMain || errorActivity || errorSessions || errorPerformance;
+
+	if (error) {
+		return <p>{error.message}</p>;
 	}
 
 	if (isLoadingMain || isLoadingActivity || isLoadingSessions || isLoadingPerformance) {
