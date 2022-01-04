@@ -3,6 +3,7 @@ import "../style/home.css";
 import Header from "../components/Header";
 import { Link } from "react-router-dom";
 import ContextButton from "../components/ContextButton";
+import { usersList } from "../utils/const/usersList";
 
 /**
  * Home Page to choose user
@@ -10,17 +11,6 @@ import ContextButton from "../components/ContextButton";
  */
 
 function Home() {
-	const usersList = [
-		{
-			id: 12,
-			name: "Karl Dovineau",
-		},
-		{
-			id: 18,
-			name: "Cecilia Ratorez",
-		},
-	];
-
 	return (
 		<React.Fragment>
 			<Header />
@@ -48,7 +38,7 @@ function Home() {
 						))}
 					</ul>
 				</section>
-				<ContextButton/>
+				<ContextButton />
 			</main>
 		</React.Fragment>
 	);

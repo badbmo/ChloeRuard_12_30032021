@@ -15,6 +15,8 @@ import { useParams } from "react-router-dom";
 import Loader from "./Loader";
 import { useContext } from "react";
 import { FetchContext } from "../utils/context/fetchContext"
+import {urlApi} from "../utils/const/urlApi"
+import {urlMockData} from "../utils/const/urlMockData"
 
 /**
  * Wrapper component displaying charts and data components
@@ -23,36 +25,6 @@ import { FetchContext } from "../utils/context/fetchContext"
 
 function Dashboard() {
 	const { userId } = useParams();
-
-	const urlApi = {
-		userMainData(userId) {
-			return `http://localhost:3000/user/${userId}`;
-		},
-		userActivity(userId) {
-			return `http://localhost:3000/user/${userId}/activity`;
-		},
-		userAverageSessions(userId) {
-			return `http://localhost:3000/user/${userId}/average-sessions`;
-		},
-		userPerformance(userId) {
-			return `http://localhost:3000/user/${userId}/performance`;
-		},
-	};
-
-	const urlMockData = {
-		userMainData(userId) {
-			return `../data/user/${userId}.json`;
-		},
-		userActivity(userId) {
-			return `../data/user/${userId}/activity.json`;
-		},
-		userAverageSessions(userId) {
-			return `../data/user/${userId}/average-sessions.json`;
-		},
-		userPerformance(userId) {
-			return `../data/user/${userId}/performance.json`;
-		},
-	};
 
 	const {fetch} = useContext(FetchContext);
 	const url = (fetch === 'API' ? urlApi : urlMockData)
