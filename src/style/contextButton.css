@@ -1,0 +1,6 @@
+.contextButton{
+	cursor: pointer;
+	padding: 1rem;
+	margin-top: 2rem;
+	background-color: lightgray;
+}
