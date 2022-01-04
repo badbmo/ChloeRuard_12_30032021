@@ -2,6 +2,7 @@ import React from "react";
 import "../style/home.css";
 import Header from "../components/Header";
 import { Link } from "react-router-dom";
+import ContextButton from "../components/ContextButton";
 
 /**
  * Home Page to choose user
@@ -47,6 +48,7 @@ function Home() {
 						))}
 					</ul>
 				</section>
+				<ContextButton/>
 			</main>
 		</React.Fragment>
 	);
