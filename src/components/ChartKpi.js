@@ -54,7 +54,7 @@ function ChartKpi({ score }) {
 }
 
 ChartKpi.propTypes = {
-  score: PropTypes.number.isRequired
+  score: PropTypes.number
 }
 
 export default ChartKpi;

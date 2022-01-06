@@ -73,7 +73,7 @@ function ChartGoal({ averageSessions }) {
 }
 
 ChartGoal.propTypes = {
-  averageSessions: PropTypes.array.isRequired
+  averageSessions: PropTypes.array
 }
 
 export default ChartGoal;

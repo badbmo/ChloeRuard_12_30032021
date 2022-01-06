@@ -36,7 +36,7 @@ function ChartRadar({ performance }) {
 }
 
 ChartRadar.propTypes = {
-  performance: PropTypes.array.isRequired
+  performance: PropTypes.array
 }
 
 export default ChartRadar;

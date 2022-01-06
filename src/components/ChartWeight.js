@@ -26,13 +26,15 @@ function ChartWeight({ activity }) {
 	};
 
 	const CustomXAxis = (tick) => {
-		const number=tick.split("-").pop()
-		if(number.startsWith("0")){
-			return number.split("0").pop()
-		}
-		else{
-			return number
-		};
+		if(tick){
+			const number=tick.split("-").pop()
+			if(number.startsWith("0")){
+				return number.split("0").pop()
+			}
+			else{
+				return number
+			};
+	}
 	};
 
 	return (
@@ -71,7 +73,7 @@ function ChartWeight({ activity }) {
 }
 
 ChartWeight.propTypes = {
-  activity: PropTypes.array.isRequired
+  activity: PropTypes.array
 }
 
 export default ChartWeight;

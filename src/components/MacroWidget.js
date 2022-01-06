@@ -27,7 +27,7 @@ function MacroWidget({ src, amount, unit, type, color }) {
 }
 
 MacroWidget.propTypes = {
-  src: PropTypes.string.isRequired,
+  src: PropTypes.string,
 	amount: PropTypes.number,
 	unit: PropTypes.string,
 	type: PropTypes.string,

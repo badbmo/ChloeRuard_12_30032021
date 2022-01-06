@@ -18,7 +18,7 @@ function SportButton({ src, alt }) {
 }
 
 SportButton.propTypes = {
-  src: PropTypes.string.isRequired,
+  src: PropTypes.string,
 	alt: PropTypes.string
 }
 
