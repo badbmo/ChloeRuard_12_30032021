@@ -11,7 +11,7 @@ import ChartKpi from "./ChartKpi";
 import ChartRadar from "./ChartRadar";
 import ChartWeight from "./ChartWeight";
 import useApi from "../utils/hooks/useApi";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import Loader from "./Loader";
 import { useContext } from "react";
 import { FetchContext } from "../utils/context/fetchContext"
@@ -42,9 +42,14 @@ function Dashboard() {
 	const [errorPerformance, isLoadingPerformance, dataPerformance] = useApi(url.userPerformance(userId));
 
 	const error = errorMain || errorActivity || errorSessions || errorPerformance;
+	const data = dataMain || dataActivity || dataSessions || dataPerformance;
 
 	if (error) {
 		return <p>{error.message}</p>;
+	}
+	
+	if ( data === "can not get user"){
+	return <Navigate to="/*" />
 	}
 
 	if (isLoadingMain || isLoadingActivity || isLoadingSessions || isLoadingPerformance) {
