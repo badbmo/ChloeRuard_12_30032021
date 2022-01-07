@@ -11,10 +11,19 @@ export default function useApi(url) {
 	const [isLoading, setIsLoading] = useState(false);
 	const [data, setData] = useState({});
 
+	function CheckError(response) {
+		//check if >= 200 && response.status <= 299
+		if (!response.ok) {
+			throw Error(response.statusText);
+		} else {
+			return response.json();
+		}
+	}
+
 	useEffect(() => {
 		setIsLoading(true);
 		fetch(url)
-			.then((response) => response.json())
+			.then(CheckError)
 			.then((result) => {
 				setData(result);
 				setIsLoading(false);

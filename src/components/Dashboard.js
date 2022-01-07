@@ -42,14 +42,9 @@ function Dashboard() {
 	const [errorPerformance, isLoadingPerformance, dataPerformance] = useApi(url.userPerformance(userId));
 
 	const error = errorMain || errorActivity || errorSessions || errorPerformance;
-	const data = dataMain || dataActivity || dataSessions || dataPerformance;
 
 	if (error) {
-		return <p>{error.message}</p>;
-	}
-	
-	if ( data === "can not get user"){
-	return <Navigate to="/*" />
+		return <Navigate to="/*" />
 	}
 
 	if (isLoadingMain || isLoadingActivity || isLoadingSessions || isLoadingPerformance) {
