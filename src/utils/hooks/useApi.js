@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ConvertData from "../mapper/ConvertData";
 
 /**
  * Custom hook to fetch data from API or mocked data
@@ -11,7 +12,7 @@ export default function useApi(url) {
 	const [isLoading, setIsLoading] = useState(false);
 	const [data, setData] = useState({});
 
-	function CheckError(response) {
+	function checkError(response) {
 		//check if >= 200 && response.status <= 299
 		if (!response.ok) {
 			throw Error(response.statusText);
@@ -23,9 +24,9 @@ export default function useApi(url) {
 	useEffect(() => {
 		setIsLoading(true);
 		fetch(url)
-			.then(CheckError)
+			.then(checkError)
 			.then((result) => {
-				setData(result);
+				setData(ConvertData(result, url));
 				setIsLoading(false);
 			})
 			.catch((error) => {
