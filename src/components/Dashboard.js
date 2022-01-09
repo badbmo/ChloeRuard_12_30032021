@@ -14,9 +14,9 @@ import useApi from "../utils/hooks/useApi";
 import { Navigate, useParams } from "react-router-dom";
 import Loader from "./Loader";
 import { useContext } from "react";
-import { FetchContext } from "../utils/context/fetchContext"
-import {urlApi} from "../utils/const/urlApi"
-import {urlMockData} from "../utils/const/urlMockData"
+import { FetchContext } from "../utils/context/fetchContext";
+import { urlApi } from "../utils/const/urlApi";
+import { urlMockData } from "../utils/const/urlMockData";
 
 /**
  * Wrapper component displaying charts and data components
@@ -26,15 +26,14 @@ import {urlMockData} from "../utils/const/urlMockData"
 function Dashboard() {
 	const { userId } = useParams();
 
-	const {fetch} = useContext(FetchContext);
-	const url = (fetch === 'API' ? urlApi : urlMockData)
+	const { fetch } = useContext(FetchContext);
+	const url = fetch === "API" ? urlApi : urlMockData;
 
 	//check in browser console where the data come from
-	if(url===urlApi){
+	if (url === urlApi) {
 		console.log("fetch data from API");
 	}
-	if(url===urlMockData)
-	console.log("fetch data from mocked data");
+	if (url === urlMockData) console.log("fetch data from mocked data");
 
 	const [errorMain, isLoadingMain, dataMain] = useApi(url.userMainData(userId));
 	const [errorActivity, isLoadingActivity, dataActivity] = useApi(url.userActivity(userId));
@@ -44,7 +43,7 @@ function Dashboard() {
 	const error = errorMain || errorActivity || errorSessions || errorPerformance;
 
 	if (error) {
-		return <Navigate to="/*" />
+		return <Navigate to="/*" />;
 	}
 
 	if (isLoadingMain || isLoadingActivity || isLoadingSessions || isLoadingPerformance) {
@@ -53,19 +52,19 @@ function Dashboard() {
 
 	return (
 		<section className="dashboard">
-			<Headline name={dataMain?.data?.userInfos.firstName} />
+			<Headline name={dataMain?.firstName} />
 			<section className="dashboard__data">
 				<section className="dashboard__charts">
-					<ChartWeight activity={dataActivity?.data?.sessions}/>
-					<ChartGoal averageSessions={dataSessions?.data?.sessions}/>
-					<ChartRadar performance={dataPerformance?.data?.data}/>
-					<ChartKpi score={dataMain?.data?.todayScore} />
+					<ChartWeight activity={dataActivity?.sessions} />
+					<ChartGoal averageSessions={dataSessions?.sessions} />
+					<ChartRadar performance={dataPerformance?.data} />
+					<ChartKpi score={dataMain?.todayScore} />
 				</section>
 				<section className="dashboard__macroList">
-					<MacroWidget src={Fire} amount={dataMain?.data?.keyData.calorieCount} unit="kCal" type="Calories" color="red" />
-					<MacroWidget src={Chicken} amount={dataMain?.data?.keyData.proteinCount} unit="g" type="Protéines" color="blue" />
-					<MacroWidget src={Apple} amount={dataMain?.data?.keyData.carbohydrateCount} unit="g" type="Glucides" color="yellow" />
-					<MacroWidget src={Hamburger} amount={dataMain?.data?.keyData.lipidCount} unit="g" type="Lipides" color="pink" />
+					<MacroWidget src={Fire} amount={dataMain?.keyData?.calorieCount} unit="kCal" type="Calories" color="red" />
+					<MacroWidget src={Chicken} amount={dataMain?.keyData?.proteinCount} unit="g" type="Protéines" color="blue" />
+					<MacroWidget src={Apple} amount={dataMain?.keyData?.carbohydrateCount} unit="g" type="Glucides" color="yellow" />
+					<MacroWidget src={Hamburger} amount={dataMain?.keyData?.lipidCount} unit="g" type="Lipides" color="pink" />
 				</section>
 			</section>
 		</section>
